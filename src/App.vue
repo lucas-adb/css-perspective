@@ -22,7 +22,7 @@ const color = computed(() => {
   if (shape.value === "heart") {
     return {
       backgroundColor: "transparent",
-      '--heart-color': bgColor.value,
+      "--heart-color": bgColor.value,
     };
   }
 
@@ -74,45 +74,47 @@ const copy = async () => {
 </script>
 
 <template>
-  <h2>CSS3 Perspective Playground</h2>
-  <main>
-    <section class="settings">
-      <div class="settings-container">
-        <label>perspective: {{ perspective }}px;</label>
-        <input type="range" min="0" max="999" v-model="perspective" />
+  <div class="main-container">
+    <h2>CSS3 Perspective Playground</h2>
+    <main>
+      <section class="settings">
+        <div class="settings-container">
+          <label>perspective: {{ perspective }}px;</label>
+          <input type="range" min="0" max="999" v-model="perspective" />
 
-        <label>rotateX: {{ rotateX }}deg; </label>
-        <input type="range" min="-180" max="180" v-model="rotateX" />
+          <label>rotateX: {{ rotateX }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateX" />
 
-        <label>rotateY: {{ rotateY }}deg; </label>
-        <input type="range" min="-180" max="180" v-model="rotateY" />
+          <label>rotateY: {{ rotateY }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateY" />
 
-        <label>rotateZ: {{ rotateZ }}deg; </label>
-        <input type="range" min="-180" max="180" v-model="rotateZ" />
+          <label>rotateZ: {{ rotateZ }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateZ" />
 
-        <button type="button" @click.prevent="reset">Reset</button>
-        <button type="button" @click.prevent="setColor">Color</button>
-        <!-- <button type="button" @click.prevent="copy">Copy</button> -->
+          <div class="btns-container">
+            <button type="button" @click.prevent="reset">Reset</button>
+            <button type="button" @click.prevent="setColor">Color</button>
 
-        <select v-model="shape">
-          <option value="square">Square</option>
-          <option value="rectangle">Rectangle</option>
-          <option value="circle">Circle</option>
-          <option value="oval">Oval</option>
-          <option value="triangle">Triangle</option>
-          <option value="heart">Heart</option>
-        </select>
+            <select v-model="shape">
+              <option value="square">Square</option>
+              <option value="rectangle">Rectangle</option>
+              <option value="circle">Circle</option>
+              <option value="oval">Oval</option>
+              <option value="triangle">Triangle</option>
+              <option value="heart">Heart</option>
+            </select>
 
-        <button type="button" @click.prevent="copy">Copy</button>
-      </div>
-    </section>
-    <section class="output">
-      <div class="box-container">
-        <div class="box" :style="[box, color]" :class="shape"></div>
-      </div>
-    </section>
-  </main>
-
+            <button type="button" @click.prevent="copy">Copy</button>
+          </div>
+        </div>
+      </section>
+      <section class="output">
+        <div class="box-container">
+          <div class="box" :style="[box, color]" :class="shape"></div>
+        </div>
+      </section>
+    </main>
+  </div>
 </template>
 
 <style scoped></style>

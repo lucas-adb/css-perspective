@@ -35,18 +35,19 @@ body {
 h2 {
   color: #8d81f3;
   text-align: center;
-  font-size: 40px;
-  margin: 20px;
+  font-size: 2rem;
 }
 main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 420px;
   max-width: 768px;
   margin: 0 auto;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 22px;
+  font-size: 1rem;
+
+  flex-wrap: wrap-reverse;
+  gap: 32px;
 }
 main label{
   display: block;
@@ -54,11 +55,10 @@ main label{
 main input[type="range"] {
   display: block;
   margin-bottom: 10px;
-  width: 200px;
+  width: 100%;
 }
 section.settings {
-  width: 50%;
-  z-index: 2;
+  max-width: 50%;
 }
 .box-container {
   padding: 50px;
@@ -72,8 +72,8 @@ button, select {
   background-color: #8d81f3;
   color: #fff;
   display: inline-block;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 0.875rem;
+  padding: 8px;
   outline: none;
   border: none;
   margin-right: 10px;
@@ -149,4 +149,26 @@ button:hover, select:hover {
   left: 0;
   transform: rotate(45deg);
   transform-origin: 100% 100%;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+  gap: 32px;
+  flex-direction: column;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+  section.settings {
+    max-width: 100%;
+  }
 }
