@@ -160,6 +160,9 @@ button:hover, select:hover {
   margin-inline: auto;
   justify-content: center;
   align-items: center;
+
+  position: relative;
+  z-index: 1;
 }
 
 .btns-container {
